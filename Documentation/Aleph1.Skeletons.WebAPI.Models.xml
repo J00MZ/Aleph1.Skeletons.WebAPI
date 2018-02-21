@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aleph1.Skeletons.WebAPI.Models</name>
+    </assembly>
+    <members>
+        <member name="T:Aleph1.Skeletons.WebAPI.Models.Person">
+            <summary>נתוני אדם</summary>
+        </member>
+        <member name="P:Aleph1.Skeletons.WebAPI.Models.Person.ID">
+            <summary>מזהה</summary>
+        </member>
+        <member name="P:Aleph1.Skeletons.WebAPI.Models.Person.FirstName">
+            <summary>שם פרטי</summary>
+        </member>
+        <member name="P:Aleph1.Skeletons.WebAPI.Models.Person.LastName">
+            <summary>שם משפחה</summary>
+        </member>
+    </members>
+</doc>
