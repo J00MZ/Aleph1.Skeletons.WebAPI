@@ -32,7 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Documentation\$(MSBuildProjectName).xml</DocumentationFile>
+    <DocumentationFile>..\Aleph1.Skeletons.WebAPI.Documentation\$(MSBuildProjectName).xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,23 +42,23 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\Documentation\$(MSBuildProjectName).xml</DocumentationFile>
+    <DocumentationFile>..\Aleph1.Skeletons.WebAPI.Documentation\$(MSBuildProjectName).xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aleph1.DI.Contracts, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.DI.Contracts.2.2.0\lib\net471\Aleph1.DI.Contracts.dll</HintPath>
     </Reference>
-    <Reference Include="Aleph1.DI.UnityImplementation, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aleph1.DI.UnityImplementation.2.2.0\lib\net471\Aleph1.DI.UnityImplementation.dll</HintPath>
+    <Reference Include="Aleph1.DI.UnityImplementation, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.DI.UnityImplementation.2.3.0\lib\net471\Aleph1.DI.UnityImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="Aleph1.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aleph1.Logging.2.0.0\lib\net471\Aleph1.Logging.dll</HintPath>
+    <Reference Include="Aleph1.Logging, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Logging.2.1.0\lib\net471\Aleph1.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Aleph1.Utilities, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.Utilities.2.0.0\lib\net471\Aleph1.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="Aleph1.WebAPI.ExceptionHandler, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aleph1.WebAPI.ExceptionHandler.2.1.0\lib\net471\Aleph1.WebAPI.ExceptionHandler.dll</HintPath>
+    <Reference Include="Aleph1.WebAPI.ExceptionHandler, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.WebAPI.ExceptionHandler.2.2.0\lib\net471\Aleph1.WebAPI.ExceptionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

@@ -15,5 +15,5 @@ TODO:
 HOW TO USE:
 * install VS 2017
 * install [vs Extensibility Tools](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ExtensibilityTools)
-* install [SideWaffle Template Pack](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.SideWaffleTemplatePack)
+* install [Sidewaffle Creator (2017)](https://marketplace.visualstudio.com/items?itemName=Sayed-Ibrahim-Hashimi.SidewaffleCreator2017)
 * run the Package project - it will create a VSIX that can be installed in VS2017.
