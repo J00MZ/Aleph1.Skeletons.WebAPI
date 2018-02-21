@@ -44,5 +44,20 @@
     {
       "path": "Aleph1.Skeletons.WebAPI.BL.Implementation\\Aleph1.Skeletons.WebAPI.BL.Implementation.csproj"
     }
+  ],
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "Aleph1.Skeletons.WebAPI.Package/**/*",
+            "Aleph1.Skeletons.WebAPI.CustomWizard/**/*",
+            "README.md",
+            ".gitattributes",
+            ".gitignore"
+          ]
+        }
+      ]
+    }
   ]
 }

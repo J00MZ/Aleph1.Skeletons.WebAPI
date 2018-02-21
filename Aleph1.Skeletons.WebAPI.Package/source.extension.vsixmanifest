@@ -17,5 +17,6 @@
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\Templates" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="Aleph1.Skeletons.WebAPI.CustomWizard" Path="|Aleph1.Skeletons.WebAPI.CustomWizard|" AssemblyName="|Aleph1.Skeletons.WebAPI.CustomWizard;AssemblyName|" />
     </Assets>
 </PackageManifest>
