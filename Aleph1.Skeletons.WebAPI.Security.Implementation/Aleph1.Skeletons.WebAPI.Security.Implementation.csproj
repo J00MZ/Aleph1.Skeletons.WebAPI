@@ -33,6 +33,12 @@
     <Reference Include="Aleph1.DI.Contracts, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.DI.Contracts.2.2.0\lib\net471\Aleph1.DI.Contracts.dll</HintPath>
     </Reference>
+    <Reference Include="Aleph1.Security.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Security.Contracts.1.0.0\lib\net471\Aleph1.Security.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Aleph1.Security.Implementation.3DES, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Security.Implementation.3DES.1.0.0\lib\net471\Aleph1.Security.Implementation.3DES.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />

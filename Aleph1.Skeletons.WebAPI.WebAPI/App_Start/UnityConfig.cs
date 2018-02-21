@@ -1,7 +1,9 @@
 using Aleph1.DI.Contracts;
 using Aleph1.DI.UnityImplementation;
+using Aleph1.Security.Contracts;
 using Aleph1.Skeletons.WebAPI.WebAPI;
 using Aleph1.Skeletons.WebAPI.WebAPI.Classes;
+using Aleph1.Skeletons.WebAPI.WebAPI.Security;
 using System;
 using System.Web.Http;
 using Unity;
@@ -15,7 +17,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI
     /// <summary>Provides the bootstrapping for integrating Unity with WebApi when it is hosted in ASP.NET.</summary>
     internal static class UnityConfig
     {
-        public static IUnityContainer DIContainer { get; set; }
+        static IUnityContainer DIContainer { get; set; }
 
         /// <summary>Integrates Unity when the application starts.</summary>
         public static void Start()
@@ -28,6 +30,9 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI
 
             // point the WebAPI to use the container
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(DIContainer);
+
+
+            AuthenticatedAttribute._chiperService = DIContainer.Resolve(typeof(ICipher)) as ICipher;
         }
 
         /// <summary>Disposes the Unity container when the application is shut down.</summary>

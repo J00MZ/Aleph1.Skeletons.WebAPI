@@ -1,6 +1,7 @@
 ﻿using Aleph1.Logging;
 using Aleph1.Skeletons.WebAPI.BL.Contracts;
 using Aleph1.Skeletons.WebAPI.Models;
+using Aleph1.Skeletons.WebAPI.WebAPI.Security;
 using Aleph1.WebAPI.ExceptionHandler;
 using System;
 using System.Linq;
@@ -9,7 +10,6 @@ using System.Web.Http;
 namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
 {
     /// <summary>Handle Person actions</summary>
-    //[CustomAuthentication]
     public class PersonController : ApiController
     {
         private readonly IBL BL;
@@ -52,7 +52,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
         /// <summary>Insert a new person</summary>
         /// <param name="person">the person</param>
         /// <returns>the person</returns>
-        [Logged, HttpPost, Route("api/Person"), FriendlyMessage("התרחשה שגיאה ביצירת האדם המבוקש")]
+        [Logged, Authenticated, HttpPost, Route("api/Person"), FriendlyMessage("התרחשה שגיאה ביצירת האדם המבוקש")]
         public Person Post(Person person)
         {
             return BL.InsertPerson(person);

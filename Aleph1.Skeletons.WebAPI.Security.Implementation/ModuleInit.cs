@@ -1,9 +1,11 @@
 using Aleph1.DI.Contracts;
+using Aleph1.Security.Contracts;
+using Aleph1.Security.Implementation._3DES;
 using System.ComponentModel.Composition;
 
 namespace Aleph1.Skeletons.WebAPI.Security.Implementation
 {
-	/// <summary>Used to register concrete implemtations to the DI container</summary>
+    /// <summary>Used to register concrete implemtations to the DI container</summary>
     [Export(typeof(IModule))]
     public class ModuleInit : IModule
     {
@@ -11,10 +13,7 @@ namespace Aleph1.Skeletons.WebAPI.Security.Implementation
 		/// <param name="registrar">add implementation to the DI container using this registrar</param>
         public void Initialize(IModuleRegistrar registrar)
         {
-            //You can register as many types as you want into the Container
-
-            //registrar.RegisterType<ITest, Test>();
-            //registrar.RegisterTypeAsSingelton<ITest, Test>();
+            registrar.RegisterTypeAsSingelton<ICipher, TripleDES>();
         }
     }
 }

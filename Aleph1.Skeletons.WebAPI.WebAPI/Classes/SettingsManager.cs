@@ -8,9 +8,6 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Classes
     internal static class SettingsManager
     {
         private static string[] _modulesPath;
-
-        /// <summary>Gets the modules to load as an array of paths.</summary>
-        /// <value>array of module paths</value>
         public static string[] ModulesPath
         {
             get
@@ -30,11 +27,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Classes
             }
         }
 
-
         private static string _documentationDirPath;
-
-        /// <summary>Gets the documentation dir path.</summary>
-        /// <value>The documentation dir path.</value>
         public static string DocumentationDirPath
         {
             get
@@ -44,6 +37,48 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Classes
                     _documentationDirPath = new Uri(new Uri(AppDomain.CurrentDomain.BaseDirectory), ConfigurationManager.AppSettings["DocumentationDirPath"]).LocalPath;
                 }
                 return _documentationDirPath;
+            }
+        }
+
+        private static string _appPrefix;
+        public static string AppPrefix
+        {
+            get
+            {
+                if (_appPrefix == default(string))
+                {
+                    _appPrefix = ConfigurationManager.AppSettings["AppPrefix"];
+                }
+                return _appPrefix;
+            }
+        }
+
+        private static int? _ticketDurationMin;
+        private static TimeSpan? _ticketDurationTimeSpan;
+        public static TimeSpan? TicketDurationTimeSpan
+        {
+            get
+            {
+                if (_ticketDurationMin == default(int?))
+                {
+                    _ticketDurationMin = int.Parse(ConfigurationManager.AppSettings["TicketDurationMin"]);
+                    if (_ticketDurationMin.Value != 0)
+                        _ticketDurationTimeSpan = TimeSpan.FromMinutes(_ticketDurationMin.Value);
+                }
+                return _ticketDurationTimeSpan;
+            }
+        }
+
+        private static string _authenticationHeaderKey;
+        public static string AuthenticationHeaderKey
+        {
+            get
+            {
+                if (_authenticationHeaderKey == default(string))
+                {
+                    _authenticationHeaderKey = ConfigurationManager.AppSettings["AuthenticationHeaderKey"];
+                }
+                return _authenticationHeaderKey;
             }
         }
     }
