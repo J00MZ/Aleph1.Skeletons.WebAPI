@@ -54,9 +54,6 @@
     <Reference Include="Aleph1.Logging, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.Logging.2.1.0\lib\net471\Aleph1.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Aleph1.Security.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aleph1.Security.Contracts.1.0.0\lib\net471\Aleph1.Security.Contracts.dll</HintPath>
-    </Reference>
     <Reference Include="Aleph1.Utilities, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.Utilities.2.0.0\lib\net471\Aleph1.Utilities.dll</HintPath>
     </Reference>
@@ -137,7 +134,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\AuthenticatedAttribute.cs" />
     <Compile Include="Security\Helpers\AuthenticationFailureResult.cs" />
-    <Compile Include="Security\AuthenticationInfo.cs" />
     <Compile Include="Security\Helpers\HttpHeadersHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +156,10 @@
     <ProjectReference Include="..\Aleph1.Skeletons.WebAPI.Models\Aleph1.Skeletons.WebAPI.Models.csproj">
       <Project>{92c08000-c01b-46cd-badd-92ad6371e5cb}</Project>
       <Name>Aleph1.Skeletons.WebAPI.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aleph1.Skeletons.WebAPI.Security.Contracts\Aleph1.Skeletons.WebAPI.Security.Contracts.csproj">
+      <Project>{5C88D276-6708-40E7-B3D0-AFAD5189B497}</Project>
+      <Name>Aleph1.Skeletons.WebAPI.Security.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

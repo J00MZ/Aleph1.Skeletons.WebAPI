@@ -33,14 +33,28 @@
     <Reference Include="Aleph1.DI.Contracts, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.DI.Contracts.2.2.0\lib\net471\Aleph1.DI.Contracts.dll</HintPath>
     </Reference>
+    <Reference Include="Aleph1.Logging, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Logging.2.1.0\lib\net471\Aleph1.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Aleph1.Security.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.Security.Contracts.1.0.0\lib\net471\Aleph1.Security.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Aleph1.Security.Implementation.3DES, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.Security.Implementation.3DES.1.0.0\lib\net471\Aleph1.Security.Implementation.3DES.dll</HintPath>
     </Reference>
+    <Reference Include="Aleph1.Utilities, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Utilities.2.0.0\lib\net471\Aleph1.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=5.0.45.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Redist.5.0.45\lib\net45\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,9 +66,21 @@
   <ItemGroup>
     <Compile Include="ModuleInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityService.cs" />
+    <Compile Include="SettingsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aleph1.Skeletons.WebAPI.Models\Aleph1.Skeletons.WebAPI.Models.csproj">
+      <Project>{92C08000-C01B-46CD-BADD-92AD6371E5CB}</Project>
+      <Name>Aleph1.Skeletons.WebAPI.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aleph1.Skeletons.WebAPI.Security.Contracts\Aleph1.Skeletons.WebAPI.Security.Contracts.csproj">
+      <Project>{5c88d276-6708-40e7-b3d0-afad5189b497}</Project>
+      <Name>Aleph1.Skeletons.WebAPI.Security.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

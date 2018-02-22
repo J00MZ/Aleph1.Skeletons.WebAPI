@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.Sec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.Security.Moq", "Aleph1.Skeletons.WebAPI.Security.Moq\Aleph1.Skeletons.WebAPI.Security.Moq.csproj", "{58C18708-6523-4AFC-A7A2-DBD8715FF6D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.Security.Contracts", "Aleph1.Skeletons.WebAPI.Security.Contracts\Aleph1.Skeletons.WebAPI.Security.Contracts.csproj", "{5C88D276-6708-40E7-B3D0-AFAD5189B497}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{58C18708-6523-4AFC-A7A2-DBD8715FF6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C18708-6523-4AFC-A7A2-DBD8715FF6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C18708-6523-4AFC-A7A2-DBD8715FF6D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C88D276-6708-40E7-B3D0-AFAD5189B497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C88D276-6708-40E7-B3D0-AFAD5189B497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C88D276-6708-40E7-B3D0-AFAD5189B497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C88D276-6708-40E7-B3D0-AFAD5189B497}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{E5AF7A97-57EE-4BF0-A939-8C00FCAAE1EC} = {E6D49581-20E7-42DB-ACDE-9EB7C0F06AE5}
 		{E6DBED51-DACC-4493-B6B0-5F6BF63EE105} = {E5AF7A97-57EE-4BF0-A939-8C00FCAAE1EC}
 		{58C18708-6523-4AFC-A7A2-DBD8715FF6D2} = {E5AF7A97-57EE-4BF0-A939-8C00FCAAE1EC}
+		{5C88D276-6708-40E7-B3D0-AFAD5189B497} = {E5AF7A97-57EE-4BF0-A939-8C00FCAAE1EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17C9AE0D-50A6-4AA9-99DA-D6239B285029}

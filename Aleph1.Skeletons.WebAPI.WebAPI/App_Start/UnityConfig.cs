@@ -1,6 +1,6 @@
 using Aleph1.DI.Contracts;
 using Aleph1.DI.UnityImplementation;
-using Aleph1.Security.Contracts;
+using Aleph1.Skeletons.WebAPI.Security.Contracts;
 using Aleph1.Skeletons.WebAPI.WebAPI;
 using Aleph1.Skeletons.WebAPI.WebAPI.Classes;
 using Aleph1.Skeletons.WebAPI.WebAPI.Security;
@@ -31,8 +31,8 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI
             // point the WebAPI to use the container
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(DIContainer);
 
-
-            AuthenticatedAttribute._chiperService = DIContainer.Resolve(typeof(ICipher)) as ICipher;
+            //explicite injection of the SecurityService to the AuthenticatedAttribute [we cant use regular DI within attribute]
+            AuthenticatedAttribute._securityService = DIContainer.Resolve(typeof(ISecurity)) as ISecurity;
         }
 
         /// <summary>Disposes the Unity container when the application is shut down.</summary>

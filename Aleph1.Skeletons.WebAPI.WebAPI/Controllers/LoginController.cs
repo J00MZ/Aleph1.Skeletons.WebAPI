@@ -1,5 +1,5 @@
 ﻿using Aleph1.Logging;
-using Aleph1.Security.Contracts;
+using Aleph1.Skeletons.WebAPI.Security.Contracts;
 using Aleph1.Skeletons.WebAPI.WebAPI.Security;
 using Aleph1.Skeletons.WebAPI.WebAPI.Security.Helpers;
 using Aleph1.WebAPI.ExceptionHandler;
@@ -11,13 +11,13 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
     /// <summary>handle login</summary>
     public class LoginController : ApiController
     {
-        private readonly ICipher ChiperService;
+        private readonly ISecurity SecurityService;
 
         /// <summary>Initializes a new instance of the <see cref="LoginController"/> class.</summary>
         [Logged(LogParameters = false)]
-        public LoginController(ICipher chiperService)
+        public LoginController(ISecurity securityService)
         {
-            this.ChiperService = chiperService;
+            this.SecurityService = securityService;
         }
 
         /// <summary>Logins to the app (specify if as manager).</summary>
@@ -31,7 +31,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
             //Client logon Name (when using Windows Authentication)
             //string userUniqueID = HttpContext.Current.User.Identity.Name;
 
-            Request.Headers.AddAuthenticationInfo(ChiperService, userUniqueID, new AuthenticationInfo() { IsManager = isManager });
+            Request.Headers.AddAuthenticationInfoValue(SecurityService.GenerateTicket(userUniqueID, isManager));
         }
     }
 }

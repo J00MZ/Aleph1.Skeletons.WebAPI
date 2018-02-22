@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58C18708-6523-4AFC-A7A2-DBD8715FF6D2}</ProjectGuid>
+    <ProjectGuid>{5C88D276-6708-40E7-B3D0-AFAD5189B497}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aleph1.Skeletons.WebAPI.Security.Moq</RootNamespace>
-    <AssemblyName>Aleph1.Skeletons.WebAPI.Security.Moq</AssemblyName>
+    <RootNamespace>Aleph1.Skeletons.WebAPI.Security.Contracts</RootNamespace>
+    <AssemblyName>Aleph1.Skeletons.WebAPI.Security.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,13 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aleph1.DI.Contracts, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aleph1.DI.Contracts.2.2.0\lib\net471\Aleph1.DI.Contracts.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,17 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModuleInit.cs" />
+    <Compile Include="ISecurity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecurityMoq.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Aleph1.Skeletons.WebAPI.Security.Contracts\Aleph1.Skeletons.WebAPI.Security.Contracts.csproj">
-      <Project>{5c88d276-6708-40e7-b3d0-afad5189b497}</Project>
-      <Name>Aleph1.Skeletons.WebAPI.Security.Contracts</Name>
+    <ProjectReference Include="..\Aleph1.Skeletons.WebAPI.Models\Aleph1.Skeletons.WebAPI.Models.csproj">
+      <Project>{92c08000-c01b-46cd-badd-92ad6371e5cb}</Project>
+      <Name>Aleph1.Skeletons.WebAPI.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

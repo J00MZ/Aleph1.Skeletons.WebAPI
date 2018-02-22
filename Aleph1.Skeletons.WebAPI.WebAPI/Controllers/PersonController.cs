@@ -34,7 +34,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
         /// <summary>get person by ID</summary>
         /// <param name="ID">the ID of the person</param>
         /// <returns>the person</returns>
-        [Logged, HttpGet, Route("api/Person/{ID}"), FriendlyMessage("התרחשה שגיאה בשליפת האדם המבוקש")]
+        [Authenticated, Logged, HttpGet, Route("api/Person/{ID}"), FriendlyMessage("התרחשה שגיאה בשליפת האדם המבוקש")]
         public Person GetPersonByID(int ID)
         {
             return BL.GetPersonByID(ID) ?? throw new Exception("Person Not Found");
@@ -43,7 +43,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
         /// <summary>get person by name</summary>
         /// <param name="firstName">the name of the person</param>
         /// <returns>the person</returns>
-        [Logged, HttpGet, Route("api/Person/GetPersonByName"), FriendlyMessage("התרחשה שגיאה בשליפת האדם המבוקש")]
+        [Authenticated, Logged, HttpGet, Route("api/Person/GetPersonByName"), FriendlyMessage("התרחשה שגיאה בשליפת האדם המבוקש")]
         public Person GetPersonByName(string firstName)
         {
             return BL.GetPersonByName(firstName) ?? throw new Exception("Person Not Found");
@@ -52,7 +52,7 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
         /// <summary>Insert a new person</summary>
         /// <param name="person">the person</param>
         /// <returns>the person</returns>
-        [Logged, Authenticated, HttpPost, Route("api/Person"), FriendlyMessage("התרחשה שגיאה ביצירת האדם המבוקש")]
+        [Authenticated(RequireManagerAccess = true), Logged, HttpPost, Route("api/Person"), FriendlyMessage("התרחשה שגיאה ביצירת האדם המבוקש")]
         public Person Post(Person person)
         {
             return BL.InsertPerson(person);
@@ -62,16 +62,13 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Controllers
         /// <param name="ID">the ID of the person</param>
         /// <param name="person">the person</param>
         /// <returns>the person</returns>
-        [Logged, HttpPut, Route("api/Person/{ID}"), FriendlyMessage("התרחשה שגיאה בעדכון פרטי האדם המבוקש")]
+        [Authenticated(RequireManagerAccess = true), Logged, HttpPut, Route("api/Person/{ID}"), FriendlyMessage("התרחשה שגיאה בעדכון פרטי האדם המבוקש")]
         public Person PutPerson(int ID, [FromBody]Person person)
         {
-            Person p = BL.GetPersonByID(ID);
+            Person p = BL.GetPersonByID(ID) ?? throw new Exception("Person Not Found");
 
-            if (p != default(Person))
-            {
-                p.FirstName = person.FirstName;
-                p.LastName = person.LastName;
-            }
+            p.FirstName = person.FirstName;
+            p.LastName = person.LastName;
 
             return p;
         }

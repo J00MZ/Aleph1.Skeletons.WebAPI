@@ -1,5 +1,4 @@
-﻿using Aleph1.Security.Contracts;
-using Aleph1.Skeletons.WebAPI.WebAPI.Classes;
+﻿using Aleph1.Skeletons.WebAPI.WebAPI.Classes;
 using System;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -16,23 +15,14 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Security.Helpers
         {
             return headers.FirstOrDefault(h => h.Key.Equals(SettingsManager.AuthenticationHeaderKey, StringComparison.OrdinalIgnoreCase)).Value?.FirstOrDefault();
         }
-        internal static AuthenticationInfo GetAuthenticationInfo(this HttpRequestHeaders headers, ICipher chiperService, string userUniqueID)
-        {
-            string value = headers.GetAuthenticationInfoValue();
-            return string.IsNullOrWhiteSpace(value) ?
-                 default(AuthenticationInfo) :
-                 chiperService.Decrypt<AuthenticationInfo>(SettingsManager.AppPrefix, userUniqueID, value);
-        }
 
         internal static void AddAuthenticationInfoValue(this HttpHeaders headers, string value)
         {
             if (headers.Contains(SettingsManager.AuthenticationHeaderKey))
                 headers.Remove(SettingsManager.AuthenticationHeaderKey);
-            headers.Add(SettingsManager.AuthenticationHeaderKey, value);
-        }
-        internal static void AddAuthenticationInfo(this HttpHeaders headers, ICipher chiperService, string userUniqueID, AuthenticationInfo authenticationInfo)
-        {
-            headers.AddAuthenticationInfoValue(chiperService.Encrypt(SettingsManager.AppPrefix, userUniqueID, authenticationInfo, SettingsManager.TicketDurationTimeSpan));
+
+            if (!String.IsNullOrWhiteSpace(value))
+                headers.Add(SettingsManager.AuthenticationHeaderKey, value);
         }
 
         internal static T GetHttpParameter<T>(this HttpAuthenticationContext context, params string[] parameterNames)
