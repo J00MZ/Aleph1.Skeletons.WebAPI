@@ -4,12 +4,14 @@ Create a VSIX for VisualStudio 2017.
 this will add a new Project Template that gives you the ability to create a web api project from scratch.
 this prject will auto include:
 * N-Tier project (including: DAL-BL-API with moqs) using DI.
+* WebAPI Auth using Tokens, with custom security project (including moq)
+* WebAPi Throttling on all controllers
 * Enabling Swagger automaticly in the project (with Documentation for your code)
 * Logging using PostSharp and NLOG (config already set to local file)
 * Friendly exception handling on the webapi controllers
 
 TODO:
-* add ticket security by default (with encryption/decryption logic from nuget)
+* add ModelValidation (with hebrew local by default)
 * add export functionality by default (with excel/pdf from nuget)
 
 HOW TO USE:
