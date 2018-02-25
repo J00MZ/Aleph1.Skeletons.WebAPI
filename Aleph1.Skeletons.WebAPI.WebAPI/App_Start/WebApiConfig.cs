@@ -20,16 +20,11 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(name: "DefaultApi", routeTemplate: "api/{controller}/{id}", defaults: new { id = RouteParameter.Optional });
 
-            //Apply Throttling Policy on all Controllers
+            //Apply Throttling Policy on all Controllers - from web.config
             //see more configs here: https://github.com/stefanprodan/WebApiThrottle
             config.MessageHandlers.Add(new ThrottlingHandler()
             {
-                Policy = new ThrottlePolicy(perSecond: 1, perMinute: 45, perHour: 2_025, perDay: 18_225, perWeek: 95_682)
-                {
-                    IpThrottling = true,
-                    EndpointThrottling = true,
-                    StackBlockedRequests = true
-                },
+                Policy = ThrottlePolicy.FromStore(new PolicyConfigurationProvider()),
                 Repository = new CacheRepository()
             });
 
