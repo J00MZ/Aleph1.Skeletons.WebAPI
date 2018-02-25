@@ -1,20 +1,24 @@
 # Aleph1.Skeletons.WebAPI
+This extension will add a new WebAPI Project Template Skeleton type for WebAPI projects.  
 
-Create a VSIX for VisualStudio 2017.
-this will add a new Project Template that gives you the ability to create a web api project from scratch.
-this prject will auto include:
-* N-Tier project (including: DAL-BL-API with moqs) using DI.
-* WebAPI Auth using Tokens, with custom security project (including moq)
-* WebAPi Throttling on all controllers
-* Enabling Swagger automaticly in the project (with Documentation for your code)
-* Logging using PostSharp and NLOG (config already set to local file)
-* Friendly exception handling on the webapi controllers
-* ModelValidation (with hebrew local by default) on the webapi controllers 
-TODO:
-* add export functionality by default (with excel/pdf from nuget)
+### Project Template Features
+* N-Tier project using DI (includes DAL-BL-API with moqs).
+* WebAPI Auth using Tokens, with custom security project (includes moq).
+* WebAPI Throttling on all controllers.
+* Enables Swagger automatically (with Documentation).
+* Logging using PostSharp and NLOG (configuration set to local file).
+* Friendly exception handling on the webapi controllers.
+* ModelValidation on the webapi controllers (hebrew locale by default).
 
-HOW TO USE:
-* install VS 2017
-* install [vs Extensibility Tools](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ExtensibilityTools)
-* install [Sidewaffle Creator (2017)](https://marketplace.visualstudio.com/items?itemName=Sayed-Ibrahim-Hashimi.SidewaffleCreator2017)
-* run the Package project - it will create a VSIX that can be installed in VS2017.
+# Prerequisites
+* [Visual Studio](https://www.visualstudio.com/) 2017
+* [VS Extensibility Tools](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ExtensibilityTools) installed.
+* [Sidewaffle Creator (2017)](https://marketplace.visualstudio.com/items?itemName=Sayed-Ibrahim-Hashimi.SidewaffleCreator2017) installed.
+
+# Installation
+* Clone the project
+* Run the Package project to create the .vsix
+* Installable .vsix in [Visual Studio](https://www.visualstudio.com/) 2017.
+
+# TODO
+* Add export functionality by default (with excel/pdf from nuget)
