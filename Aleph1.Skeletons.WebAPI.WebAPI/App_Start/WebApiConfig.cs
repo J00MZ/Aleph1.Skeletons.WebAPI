@@ -1,4 +1,8 @@
 ﻿using Aleph1.Logging;
+using Aleph1.Skeletons.WebAPI.WebAPI.Security;
+using FluentValidation;
+using FluentValidation.WebApi;
+using System.Globalization;
 using System.Web.Http;
 using WebApiThrottle;
 
@@ -28,6 +32,15 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI
                 },
                 Repository = new CacheRepository()
             });
+
+            //Apply model validation attribute to all controllers
+            config.Filters.Add(new ValidatedAttribute());
+
+            //Configure Model Validation to use FluentValidation
+            FluentValidationModelValidatorProvider.Configure(config);
+
+            //Configure Model validation errors to be in Hebrew
+            ValidatorOptions.LanguageManager.Culture = new CultureInfo("he");
         }
     }
 }
