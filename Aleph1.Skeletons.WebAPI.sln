@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
+#if(false)
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Package", "0. Package", "{21A2C231-CBB0-45D0-854E-A3B824613B6E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
@@ -12,6 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Package", "0. Package", 
 		.template.config\template.vstemplate = .template.config\template.vstemplate
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{326CF1B6-4254-40AE-8955-D0C09F5ABA3B}"
+	ProjectSection(SolutionItems) = preProject
+		.template.config\template.json = .template.config\template.json
+		.template.config\template.vstemplate = .template.config\template.vstemplate
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.Package", "Aleph1.Skeletons.WebAPI.Package\Aleph1.Skeletons.WebAPI.Package.csproj", "{5900BE68-B9FD-43C6-8EC8-B9C808E5C1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.CustomWizard", "Aleph1.Skeletons.WebAPI.CustomWizard\Aleph1.Skeletons.WebAPI.CustomWizard.csproj", "{BFA760D3-2FCF-4D4D-BB20-D9C35CB8D103}"
+EndProject
+#endif
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Common", "1. Common", "{49BA55BA-94F1-4959-8B79-F2F6D9676BE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{E6D49581-20E7-42DB-ACDE-9EB7C0F06AE5}"
@@ -21,8 +33,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.Models", "Aleph1.Skeletons.WebAPI.Models\Aleph1.Skeletons.WebAPI.Models.csproj", "{92C08000-C01B-46CD-BADD-92AD6371E5CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.WebAPI", "Aleph1.Skeletons.WebAPI.WebAPI\Aleph1.Skeletons.WebAPI.WebAPI.csproj", "{45DDD773-6F76-4256-8071-9C6586EBA491}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.Package", "Aleph1.Skeletons.WebAPI.Package\Aleph1.Skeletons.WebAPI.Package.csproj", "{5900BE68-B9FD-43C6-8EC8-B9C808E5C1A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E426B2A6-0794-49AA-9C92-909ADF26262C}"
 	ProjectSection(SolutionItems) = preProject
@@ -42,14 +52,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.BL.Contracts", "Aleph1.Skeletons.WebAPI.BL.Contracts\Aleph1.Skeletons.WebAPI.BL.Contracts.csproj", "{2C46A29D-53DF-4908-A3B0-765DEC8E9F61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.BL.Implementation", "Aleph1.Skeletons.WebAPI.BL.Implementation\Aleph1.Skeletons.WebAPI.BL.Implementation.csproj", "{3019CA45-A22F-4C17-98F5-480763CFB5C0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{326CF1B6-4254-40AE-8955-D0C09F5ABA3B}"
-	ProjectSection(SolutionItems) = preProject
-		.template.config\template.json = .template.config\template.json
-		.template.config\template.vstemplate = .template.config\template.vstemplate
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Skeletons.WebAPI.CustomWizard", "Aleph1.Skeletons.WebAPI.CustomWizard\Aleph1.Skeletons.WebAPI.CustomWizard.csproj", "{BFA760D3-2FCF-4D4D-BB20-D9C35CB8D103}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{E5AF7A97-57EE-4BF0-A939-8C00FCAAE1EC}"
 EndProject
