@@ -8,6 +8,19 @@ namespace Aleph1.Skeletons.WebAPI.WebAPI.Classes
     /// <summary>Handle settings from config</summary>
     internal static class SettingsManager
     {
+        private static string _environment;
+        public static string Environment
+        {
+            get
+            {
+                if (_environment == default(string))
+                {
+                    _environment = ConfigurationManager.AppSettings["Environment"];
+                }
+                return _environment;
+            }
+        }
+
         private static string[] _modulesPath;
         public static string[] ModulesPath
         {
