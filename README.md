@@ -9,9 +9,8 @@ this prject will auto include:
 * Enabling Swagger automaticly in the project (with Documentation for your code)
 * Logging using PostSharp and NLOG (config already set to local file)
 * Friendly exception handling on the webapi controllers
-
+* ModelValidation (with hebrew local by default) on the webapi controllers 
 TODO:
-* add ModelValidation (with hebrew local by default)
 * add export functionality by default (with excel/pdf from nuget)
 
 HOW TO USE:
